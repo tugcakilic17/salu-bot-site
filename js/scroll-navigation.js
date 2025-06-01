@@ -35,3 +35,23 @@ window.addEventListener("wheel", (e) => {
     isScrolling = false;
   }, 1000);
 }, { passive: true });
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  let closestSection = 0;
+  let minDistance = Infinity;
+
+  sections.forEach((id, index) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const distance = Math.abs(el.offsetTop - scrollY);
+      if (distance < minDistance) {
+        closestSection = index;
+        minDistance = distance;
+      }
+    }
+  });
+
+  currentIndex = closestSection;
+});
+

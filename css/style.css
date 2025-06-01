@@ -94,6 +94,9 @@ p {
   cursor: pointer;
   outline: none;
 }
+.navbar-links li.login-link {
+  margin-right: 48px; /* sadece sağ boşluk */
+}
 
 /* Responsive */
 @media (max-width: 768px) {
